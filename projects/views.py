@@ -5,7 +5,11 @@ from django.shortcuts import get_object_or_404
 from . import serializers as s 
 from . import models as m 
 
-
+class ProjectRetrieveAPIView(APIView):
+    def get(self, request): 
+        projects = m.Project.objects.all() 
+        serialized = s.ProjectSerializer(projects, many=True) 
+        return Response(status=200, data=serialized.data)
 
 class ProjectCreateAPIView(APIView):
     permission_classes = (IsAuthenticated, )
