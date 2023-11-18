@@ -4,7 +4,7 @@ from projects.views import ProjectCreateAPIView, ProjectUpdateDeleteAPIView, Pro
 
 
 urlpatterns = [
-    path('projects/', ProjectRetrieveAPIView.as_view(), name='projects'),
+    path('projects-list/', ProjectRetrieveAPIView.as_view(), name='projects'),
     path('project/<int:pk>/', ProjectUpdateDeleteAPIView.as_view(), name='update-delete-project'),
     path('project-create/', ProjectCreateAPIView.as_view(), name='project-create'),
 ]

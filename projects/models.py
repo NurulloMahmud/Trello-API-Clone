@@ -21,7 +21,7 @@ class ProjectMember(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f"{self.project.title} -> {self.user.get_username}"
+        return f"{self.project.title} -> {self.user.get_username()}"
 
 
 class Cart(models.Model):

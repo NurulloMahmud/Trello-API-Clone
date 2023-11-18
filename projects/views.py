@@ -5,6 +5,8 @@ from django.shortcuts import get_object_or_404
 from . import serializers as s 
 from . import models as m 
 
+
+
 class ProjectRetrieveAPIView(APIView):
     def get(self, request): 
         projects = m.Project.objects.all() 
